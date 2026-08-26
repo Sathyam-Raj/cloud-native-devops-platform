@@ -1,0 +1,32 @@
+replicaCount: 3
+
+image:
+  repository: cloud-native-app
+  tag: "1.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+database:
+  host: postgres
+  port: 5432
+  name: cloudapp
+  user: devuser
+  password: devpass
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
