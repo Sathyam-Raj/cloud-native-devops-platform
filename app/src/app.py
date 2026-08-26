@@ -31,10 +31,9 @@ def version():
 
 @app.get("/api/users")
 def users():
-    with get_connection() as connection:
-        with connection.cursor() as cursor:
-            cursor.execute("SELECT id, name FROM users ORDER BY id")
-            rows = cursor.fetchall()
+    with get_connection() as connection, connection.cursor() as cursor:
+        cursor.execute("SELECT id, name FROM users ORDER BY id")
+        rows = cursor.fetchall()
 
     return jsonify([
         {"id": row[0], "name": row[1]}
@@ -44,12 +43,11 @@ def users():
 
 @app.get("/api/orders")
 def orders():
-    with get_connection() as connection:
-        with connection.cursor() as cursor:
-            cursor.execute(
-                "SELECT id, user_id, product FROM orders ORDER BY id"
-            )
-            rows = cursor.fetchall()
+    with get_connection() as connection, connection.cursor() as cursor:
+        cursor.execute(
+            "SELECT id, user_id, product FROM orders ORDER BY id"
+        )
+        rows = cursor.fetchall()
 
     return jsonify([
         {
@@ -59,7 +57,6 @@ def orders():
         }
         for row in rows
     ])
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
