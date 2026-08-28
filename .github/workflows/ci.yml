@@ -51,6 +51,7 @@ jobs:
         with:
           image-ref: cloud-native-app:${{ github.sha }}
           format: table
+          scanners: vuln
           vuln-type: os,library
           severity: CRITICAL,HIGH
           ignore-unfixed: true
