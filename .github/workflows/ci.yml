@@ -47,9 +47,11 @@ jobs:
         run: docker build -f docker/Dockerfile -t cloud-native-app:${{ github.sha }} .
 
       - name: Scan Docker image
-        uses: docker/scout-action@v1
+        uses: aquasecurity/trivy-action@0.35.0
         with:
-          command: cves
-          image: cloud-native-app:${{ github.sha }}
-          only-severities: critical,high
-          exit-code: true
+          image-ref: cloud-native-app:${{ github.sha }}
+          format: table
+          vuln-type: os,library
+          severity: CRITICAL,HIGH
+          ignore-unfixed: true
+          exit-code: "1"
