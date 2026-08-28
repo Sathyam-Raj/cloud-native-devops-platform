@@ -47,7 +47,7 @@ jobs:
         run: docker build -f docker/Dockerfile -t cloud-native-app:${{ github.sha }} .
 
       - name: Scan Docker image
-        uses: aquasecurity/trivy-action@0.35.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: cloud-native-app:${{ github.sha }}
           format: table
