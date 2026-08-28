@@ -13,7 +13,7 @@ on:
       - main
 
 jobs:
-  test:
+  ci:
 
     runs-on: ubuntu-latest
 
@@ -41,3 +41,15 @@ jobs:
 
       - name: Run tests
         run: pytest
+
+      - name: Build Docker image
+        working-directory: .
+        run: docker build -f docker/Dockerfile -t cloud-native-app:${{ github.sha }} .
+
+      - name: Scan Docker image
+        uses: docker/scout-action@v1
+        with:
+          command: cves
+          image: cloud-native-app:${{ github.sha }}
+          only-severities: critical,high
+          exit-code: true
