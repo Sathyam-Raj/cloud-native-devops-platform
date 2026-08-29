@@ -1,4 +1,4 @@
-replicaCount: 3
+replicaCount: 4
 
 image:
   repository: 534670738035.dkr.ecr.eu-north-1.amazonaws.com/cloud-native-devops-platform
