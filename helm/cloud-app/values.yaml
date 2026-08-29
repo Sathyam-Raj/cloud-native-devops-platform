@@ -1,8 +1,8 @@
 replicaCount: 3
 
 image:
-  repository: cloud-native-app
-  tag: "1.0"
+  repository: 534670738035.dkr.ecr.eu-north-1.amazonaws.com/cloud-native-devops-platform
+  tag: "e9fad04552832758df30a27291676a7f9990c172"
   pullPolicy: IfNotPresent
 
 service:
