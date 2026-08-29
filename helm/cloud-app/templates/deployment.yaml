@@ -20,6 +20,9 @@ spec:
         app: {{ .Release.Name }}
 
     spec:
+      imagePullSecrets:
+        - name: ecr-registry-secret
+
       containers:
         - name: {{ .Release.Name }}
 
