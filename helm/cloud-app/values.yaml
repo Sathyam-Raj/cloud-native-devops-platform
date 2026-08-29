@@ -1,5 +1,8 @@
 replicaCount: 4
 
+podAnnotations:
+  gitops-demo: "v1"
+
 image:
   repository: 534670738035.dkr.ecr.eu-north-1.amazonaws.com/cloud-native-devops-platform
   tag: "e9fad04552832758df30a27291676a7f9990c172"

@@ -18,6 +18,8 @@ spec:
     metadata:
       labels:
         app: {{ .Release.Name }}
+      annotations:
+        gitops-demo: {{ index .Values.podAnnotations "gitops-demo" | quote }}
 
     spec:
       imagePullSecrets:
