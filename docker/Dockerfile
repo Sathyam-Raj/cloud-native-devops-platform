@@ -12,7 +12,7 @@ RUN apt-get update \
 COPY app/requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt \
-    && pip install --no-cache-dir --upgrade setuptools msgpack
+    && pip uninstall -y setuptools
 
 COPY app/src ./src
 
