@@ -5,7 +5,7 @@ podAnnotations:
 
 image:
   repository: 534670738035.dkr.ecr.eu-north-1.amazonaws.com/cloud-native-devops-platform
-  tag: "94ded56f8c6fe16d0e872e0e6bcda07a041b6b50"
+  tag: "f2c37ff0ee9b716208df6b766285172cc617f8aa"
   pullPolicy: IfNotPresent
 
 service:
