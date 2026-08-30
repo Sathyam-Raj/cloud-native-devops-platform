@@ -26,7 +26,6 @@ database:
   port: 5432
   name: cloudapp
   user: devuser
-  password: devpass
 
 autoscaling:
   enabled: true
