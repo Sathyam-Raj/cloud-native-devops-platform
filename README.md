@@ -271,3 +271,8 @@ Kubernetes Deployment
 
 The platform provides an automated path from source-code changes to a tested and security-scanned container image, secure AWS image publishing, GitOps-based Kubernetes deployment, autoscaling, monitoring, and self-healing.
 
+
+## Documentation
+
+- [Troubleshooting Guide](docs/troubleshooting.md)
+- [Demo Guide](docs/demo.md)
